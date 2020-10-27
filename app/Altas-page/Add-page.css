@@ -1,0 +1,98 @@
+
+.bar {
+    background-color: #EDEDED;
+    border-bottom-color: darkgray;
+}
+.main-page{
+     margin-top: 40;
+    vertical-align: middle;
+}
+.mgLogo {
+ margin-top: 40;
+  margin-bottom: 30;  
+  font-weight: bold; 
+  height: 400px;
+  width: 400px;  
+}
+.input-file{
+    position: absolute;
+    text-transform: lowercase;
+    width: 700px;
+    height: 111px;
+    left: 9px;
+    top: 50px;
+    
+    background: #EBEBEB;
+    border-radius: 13px;
+}
+.col-btn {
+    margin-top: 20;
+}
+.buttons {
+    flex-direction: row;
+    margin-top: .2;
+}
+.btn{
+    left: 32px;
+    border-radius: 13;
+    background: chartreuse;
+    color: white;
+    width: 200;    
+    margin-bottom: 20;
+}
+.btn-two {
+    background-color: transparent;
+    color: chartreuse;
+    left: 32px;
+    width: 200;
+    border: 1px solid chartreuse;
+    transition: color 0.3s ease-out 0.3s;
+    font-family: Verdana;
+    cursor: pointer;
+    overflow: hidden;
+    
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn-two::before, .btn-two::after {
+    content: "";
+    left: 0;
+    transform: skewY(-12deg);
+    transition: all 0.5s ease-out;
+    background-color: #ed5107;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+.btn-two::before {
+    top:-65px;
+}
+.btn-two::after {
+bottom: -65px;
+}
+.btn-two:hover::before {
+    top: -20px;
+}
+.btn-two:hover::after {
+    bottom: -20px;
+}
+.btn-two:hover {
+    color:#fff;
+}
+.form {
+    flex-grow: 2;
+  vertical-align: middle;
+  margin-left: 30;
+  margin-right:30;   
+  border-radius: 20;
+  margin-bottom: 40;
+}
+
+@keyframes jump {
+    from{
+        transform: translateY(0);
+    } to{
+        transform: translateY(-10px);
+    }
+
+}

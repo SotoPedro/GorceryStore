@@ -1,0 +1,45 @@
+<Page loaded="pageLoaded" class="page"
+    xmlns="http://www.nativescript.org/tns.xsd" actionBarHidden="true">
+    <FlexboxLayout class="page">
+        <StackLayout class="Main-space">
+            <Image class="Logo" src="~/Imagenes/Logo.png" />
+            <Label class="header" text="Green Space" />
+        </StackLayout>
+        <ScrollView>
+            <StackLayout class="form">
+                <GridLayout rows="auto, auto, auto">
+                    <StackLayout row="0" class="input-info">
+                        <TextField text="{{ username }}" hint="Username"
+                            textAlignment="center" returnKeyType="next"
+                            color="gray" />
+                    </StackLayout>
+
+                    <StackLayout row="1" class="input-info">
+                        <TextField required="true" text="{{ password }}"
+                            hint="Password" textAlignment="center"
+                            secure="true" color="gray" />
+                    </StackLayout>
+
+                    <StackLayout row="2" class="input-info"
+                        visibility="{{ !isLogginIn  ? 'visible' : 'collapse' }}">
+                        <TextField text="{{ mail }}" hint="Email"
+                            keyboardType="email" autocapitalizationType="none"
+                            textAlignment="center" color="gray" />
+                    </StackLayout>                    
+                </GridLayout>
+
+                <Button class="btn"
+                    text="{{ isLogginIn ? 'Log in' : 'Sign Up'}}"
+                    tap="{{ onButtonTap }}" />
+
+                <Label class="Log-in sign-up" tap="{{ toggleForm }}"
+                    horizontalAlignment="center">
+                    <FormattedString>
+                        <Span
+                            text="{{ isLogginIn ? 'Create Account': 'Back to Login'}}" />
+                    </FormattedString>
+                </Label>                                    
+            </StackLayout>
+        </ScrollView>
+    </FlexboxLayout>
+</Page>

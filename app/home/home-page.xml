@@ -1,0 +1,111 @@
+<Page loaded="pageLoaded" xmlns="http://www.nativescript.org/tns.xsd"
+    actionBarHidden="true">
+    <GridLayout rows="*" height="100%"
+        xmlns:nsDrawer="nativescript-ui-sidedrawer">
+        <nsDrawer:RadSideDrawer id="sideDrawer" rows="0">
+            <nsDrawer:RadSideDrawer.drawerContent>
+                <StackLayout backgroundColor="Green">
+                    <StackLayout>
+                        <Image src="~/Imagenes/Logo.png" class="logo"
+                            tap="{{  onCloseDrawerTap }}" />
+                    </StackLayout>
+                    <StackLayout class="lbls-spaces" height="50%">
+                        <GridLayout rows="auto,auto,auto">
+
+                            <GridLayout row="0" rows="10,30,*"
+                                columns="20,*,100,*" class="lbl-grid"
+                                tap="{{ loadProductos }}">
+                                <Label text="&#xf06e;" class="fa fa-item"
+                                    row="1" col="1" />
+                                <Label text="Ver mis productos"
+                                    class="lbl-item" row="1" col="2" />
+                            </GridLayout>
+
+                            <GridLayout row="1" rows="10,30,*"
+                                columns="20,*,100,*" class="lbl-grid"
+                                tap="{{ showVentasTap }}">
+                                <Label text="&#xf080;" class="fa fa-item"
+                                    row="1" col="1" />
+                                <Label text="Ver mis ventas" class="lbl-item"
+                                    row="1" col="2" />
+                            </GridLayout>
+
+                            <GridLayout row="2" rows="10,30,*"
+                                columns="20,*,100,*" class="lbl-grid"
+                                tap="{{ onVentasTap }}">
+                                <Label text="&#xf274;" class="fa fa-item"
+                                    row="1" col="1" />
+                                <Label text="Anotar una venta"
+                                    class="lbl-item" row="1" col="2" />
+                            </GridLayout>
+
+                        </GridLayout>
+                    </StackLayout>
+                    <Label text="Cerrar Sesión" color="lightgray" padding="10"
+                        style="horizontal-align: center"
+                        tap="{{ onLogOutTap }}" />
+                </StackLayout>
+            </nsDrawer:RadSideDrawer.drawerContent>
+            <nsDrawer:RadSideDrawer.mainContent>
+                <GridLayout rows="auto,auto,*" class="wrapper">                    
+                    <ScrollView row="2"
+                        visibility="{{ !isSelected ? 'visible': 'collapse'}}"
+                        class="scroll">
+                        <StackLayout>
+                            <ListView items="{{ producto }}"
+                                itemTap="{{ onItemTap }}"
+                                style="height:1250px">
+                                <ListView.itemTemplate>
+                                    <GridLayout col="*, auto,auto" rows="*">
+                                        <Label col="0" text="&#xf06c;"
+                                            class="fa fa-style"
+                                            color="white" />
+                                        <Label col="1" text="{{ name }}"
+                                            class="t-12"
+                                            verticalAlignment="center"
+                                            style="width: 70%"
+                                            color="white" />
+                                    </GridLayout>
+                                </ListView.itemTemplate>
+                            </ListView>
+                            <Button text="Regresar" class="opbtn"
+                                tap="{{ onCleanTap }}" />
+                        </StackLayout>
+                    </ScrollView>
+                    <StackLayout
+                        visibility="{{ isSelected ? 'visible': 'collapse'}}"
+                        class="btnActions" row="2"
+                        backgroundColor="whitesmoke">
+                        <GridLayout rows="*,auto,*">
+                            <StackLayout row="1" class="btn-stck">
+                                <Button text="Agregar Producto"
+                                    tap="{{ onAddNavigate }}" class="opbtn" />
+                                <Button text="Eliminar Producto"
+                                    tap="{{ onDeleteNavigate }}"
+                                    class="opbtn" />
+                                <Button text="Modificar Producto"
+                                    tap="{{ onEditNavigate }}"
+                                    class="opbtn" />
+                            </StackLayout>
+                        </GridLayout>
+                    </StackLayout>
+                    <StackLayout class="search" row="1">
+                        <SearchBar hint="Buscar un Producto" text="{{ searchPhrase }}"
+                            submit="{{ onSearchSubmit }}"
+                            class="bar-search" />
+                    </StackLayout>
+                    <GridLayout class="bar" row="0">
+                        <GridLayout columns="auto,*,40" class="bar-items">
+                            <Label text="&#xf039;" col="0" class="Menu fa"
+                                tap="{{ onOpenDrawerTap }}" />
+                            <Label col="1" text="Green Space" class="header"
+                                horizontalAlignment="center" />
+                            <Image src="~/Imagenes/Logo.png" col="2"
+                                tap="{{ onLogOutTap }}" />
+                        </GridLayout>
+                    </GridLayout>
+                </GridLayout>
+            </nsDrawer:RadSideDrawer.mainContent>
+        </nsDrawer:RadSideDrawer>
+    </GridLayout>
+</Page>

@@ -1,0 +1,40 @@
+<Page loaded="pageLoaded" class="page"
+    xmlns="http://www.nativescript.org/tns.xsd" actionBarHidden="true">
+    <GridLayout rows="auto,*" class="wrapper">
+
+        <ScrollView class="inner" row="1">
+            <StackLayout>
+                <StackLayout class="main-page">
+                    <Image src="~/Imagenes/Logo.png" class="mgLogo" />
+                </StackLayout>
+                <StackLayout class="form">
+                    <TextField class="input-file" text="{{ name }}"
+                        hint="Nombre del producto" textAlignment="center"
+                        color="gray" />
+
+                    <TextField class="input-file" text="{{ cantidad }}"
+                        hint="Cantidad" textAlignment="center"
+                        keyboardType="number" />
+
+                    <TextField class="input-file" text="{{ precio }}"
+                        hint="Precio" keyboardType="number"
+                        textAlignment="center" />
+                </StackLayout>
+                <GridLayout class="col-btn">
+                    <GridLayout columns="*,110,*,110,*" class="buttons">
+                        <Button col="1" text="Cancelar"
+                            tap="{{ onCancelTap }}" class="btn btn-one" />
+                        <Button col="3" text="Agregar"
+                            tap="{{ onAcceptedTap }}" class="btn" />
+                    </GridLayout>
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+        <GridLayout class="bar" row="0">
+            <GridLayout columns="30,*,40">
+                <Image src="~/Imagenes/bb-ar.png" class="img-flecha" col="0" tap="{{ onReturnTap }}" />
+                <Image src="~/Imagenes/Logo.png" class="img-Logo" col="2" />
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+</Page>

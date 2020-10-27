@@ -1,0 +1,41 @@
+<Page loaded="pageLoaded" class="page"
+    xmlns="http://www.nativescript.org/tns.xsd" actionBarHidden="true">
+    <GridLayout rows="auto,*" class="wrapper">
+
+        <ScrollView class="inner" row="1">
+            <StackLayout>
+                <StackLayout class="form">
+                    <Label horizontalAlignment="center" color="chartreuse"
+                        text="Producto Vendido" class="Title" />
+                    <TextField text="{{ name }}" hint="Nombre Del Producto"
+                        horizontalAlignment="center" class="input-file" />
+                    <TextField text="{{ cantidad }}" hint="Cantidad Vendidad"
+                        horizontalAlignment="center" class="input-file"
+                        keyboardType="number" />
+                </StackLayout>
+                <GridLayout columns="*,110,auto,110,*">
+                    <Label col="1" text="Total: " tap="{{ totalTap }}"
+                        class="total" />
+                    <Label col="3" text="{{ TotalPrice }}"
+                        class="total-label" />
+                </GridLayout>
+
+                <GridLayout columns="*,110,*,110,*" class="buttons">
+                    <Button col="1" text="Cancelar" tap="{{ onCancelTap }}"
+                        class="btn" />
+                    <Button col="3" text="Guardar" tap="{{ onAcceptedTap }}"
+                        class="btn" isEnabled="{{ accepted }}"/>
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <GridLayout class="bar" row="0">
+            <GridLayout columns="30,*,40">
+                <Image src="~/Imagenes/bb-ar.png" class="img-flecha" col="0"
+                    tap="{{ onReturnTap }}" />
+                <Image src="~/Imagenes/Logo.png" class="img-Logo" col="2" />
+            </GridLayout>
+        </GridLayout>
+
+    </GridLayout>
+</Page>

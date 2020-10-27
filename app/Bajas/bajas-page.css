@@ -1,0 +1,53 @@
+wrapper{
+    background-color: #ffff;
+}
+.bar {
+    background-color: #EDEDED;
+    border-bottom-color: darkgray;
+}
+.main-page{
+    margin-top: 40;
+    vertical-align: middle;
+}
+.mgLogo {
+ margin-top: 40;
+  margin-bottom: 30;  
+  font-weight: bold; 
+  height: 400px;
+  width: 400px;  
+}
+.input-file{
+    position: absolute;
+    text-transform: lowercase;
+    font-weight: bold;
+    width: 700px;
+    height: 50%;
+    left: 50%;
+    top: 50px;
+    
+    background: #EBEBEB;
+    border-radius: 13px;
+}
+.col-btn {
+    margin-top: 20;
+}
+.buttons {
+    flex-direction: row;
+    margin-top: .2;
+}
+.btn{
+    left: 32px;
+    border-radius: 13;
+    background: chartreuse;
+    color: white;
+    width: 200;    
+    margin-bottom: 20;
+}
+.form {
+    flex-grow: 2;
+  vertical-align: middle;
+  margin-left: 30;
+  margin-right:30;   
+  border-radius: 20;
+  margin-bottom: 40;
+}

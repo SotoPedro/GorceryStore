@@ -1,0 +1,60 @@
+.Title{
+    font-weight: bold;
+    height: 50;
+    font-size: 30px;
+    margin-bottom: 50;
+}
+
+.bar {
+    background-color: #EDEDED;
+    border-bottom-color: darkgray;
+}
+.buttons {
+    flex-direction: row;
+    margin-top: .2;
+}
+.input-file{
+    position: absolute;
+    text-align: center;
+    text-transform: lowercase;
+    font-weight: bold;
+    width: 700px;
+    height: 50%;
+    left: 50%;
+    top: 50px;
+    
+    background: #EBEBEB;
+    border-radius: 13px;
+}
+
+.btn{
+    left: 32px;
+    border-radius: 13;
+    background: chartreuse;
+    color: white;
+    width: 200;    
+    margin-bottom: 20;
+}
+.form {
+    flex-grow: 2;
+  vertical-align: middle;
+  margin-left: 30;
+  margin-right:30;   
+  border-radius: 20;
+  margin-bottom: 40;
+  margin-top: 300px
+}
+.total {
+    margin-bottom: 100;
+    font-size: 30px;
+    color: chartreuse;
+    font-weight: bold;
+}
+.total-label{
+    margin-bottom: 100;
+    font-size: 30px;
+    color: white;
+    background-color: 	rgb(124,252,0);
+    border-radius: 30;
+    text-align: center
+}
